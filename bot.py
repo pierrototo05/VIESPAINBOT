@@ -91,6 +91,8 @@ def main():
 
         cache = load_cache()
         new_cache = set(cache)
+        
+        send_message("✅ Le bot tourne bien, test de notif.")
 
         for source, titre, lien in offres:
             key = f"{source}|{titre}"
