@@ -85,8 +85,6 @@ def get_natixis_offres():
 # === MAIN ===
 def main():
     try:
-        send_message("✅ Le bot tourne bien, test de notif.")  # <== TEST placé en tout début
-
         offres = []
         offres += get_sg_offres()
         offres += get_bnp_offres()
