@@ -13,7 +13,9 @@ MOTS_CLES_FINANCE = ["finance", "financial", "financier", "risk", "analyst", "sa
 # === UTILS ===
 def send_message(text):
     url = f"https://api.telegram.org/bot{TOKEN}/sendMessage"
-    requests.post(url, data={"chat_id": CHAT_ID, "text": text})
+    response = requests.post(url, data={"chat_id": CHAT_ID, "text": text})
+    print("Status Code:", response.status_code)
+    print("Response:", response.text)
 
 def load_cache():
     if os.path.exists(CACHE_FILE):
@@ -83,6 +85,8 @@ def get_natixis_offres():
 # === MAIN ===
 def main():
     try:
+        send_message("✅ Le bot tourne bien, test de notif.")  # <== TEST placé en tout début
+
         offres = []
         offres += get_sg_offres()
         offres += get_bnp_offres()
@@ -91,8 +95,6 @@ def main():
 
         cache = load_cache()
         new_cache = set(cache)
-        
-        send_message("✅ Le bot tourne bien, test de notif.")
 
         for source, titre, lien in offres:
             key = f"{source}|{titre}"
