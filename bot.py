@@ -7,7 +7,7 @@ import os
 TOKEN = "7465906532:AAGxQ2lmtCgHm3pXL1IrEU6bhiGJb9FRJXg"
 CHAT_ID = "2085048128"
 CACHE_FILE = "cache.json"
-PAYS_AUTORISES = {"Espagne", "Madrid", "Barcelone"}
+PAYS_AUTORISES = {"Espagne", "Madrid",}
 MOTS_CLES_FINANCE = ["finance", "financial", "financier", "risk", "analyst", "sales", "trading", "contrôle", "gestion"]
 
 # === UTILS ===
